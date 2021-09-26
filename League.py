@@ -1,13 +1,18 @@
+import datetime
+
 E1, W1, PTS1, E2, W2, PTS2, E3, W3, PTS3, E4, W4, PTS4, E5, W5, PTS5, E6, W6, PTS6 = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, \
                                                                                      0, 0, 0, 0, 0, 0, 0
 homeBet1, awayBet1, homeBet2, awayBet2, homeBet3, awayBet3, homeBet4, awayBet4, homeBet5, awayBet5, \
     homeBet6, awayBet6 = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+HomeTeam = "Home Team"
+AwayTeam = "Away Team"
 Elyashiv = ["Elyashiv", E1, W1, PTS1, homeBet1, awayBet1]
 David = ["David", E2, W2, PTS2, homeBet2, awayBet2]
 Yuval = ["Yuval", E3, W3, PTS3, homeBet3, awayBet3]
 Yehiam = ["Yehiam", E4, W4, PTS4, homeBet4, awayBet4]
 Matanel = ["Matanel", E5, W5, PTS5, homeBet5, awayBet5]
 Shmuel = ["Shmuel", E6, W6, PTS6, homeBet6, awayBet6]
+endTimeBet = datetime.time.min.strftime("%H:%M:%S")
 
 players = [Elyashiv, David, Yuval, Yehiam, Matanel, Shmuel]
 running = True
@@ -43,10 +48,14 @@ while running:
     4. Yehiam
     5. Matanel
     6. Shmuel""")
-    name = int(input())
+    name = int(input("\t"))
     if name == 1:
         name = Elyashiv
-        choice = int(input("Press 1 to bet, Press 2 to manage league: "))
+        choice = int(input("""\t1. Bet
+    2. Enter result of a game
+    3. Enter next game teams
+    4. Enter end time of betting
+    """))
         if choice == 1:
             pass
         elif choice == 2:
@@ -62,6 +71,12 @@ while running:
                     player[2] += 1
                     player[3] += 1
                     print(player[0], "got identity, and gain 1 points")
+        elif choice == 3:
+            HomeTeam = input("\tEnter the name of the HOME team: ")
+            AwayTeam = input("\tEnter the name of the AWAY team: ")
+        elif choice == 4:
+            hour, minutes = int(input("Enter a hour: ")), int(input("Enter a minutes: "))
+            endTimeBet = datetime.time(hour, minutes).strftime("%H:%M:%S")
     elif name == 2:
         name = David
     elif name == 3:
@@ -72,8 +87,12 @@ while running:
         name = Matanel
     elif name == 6:
         name = Shmuel
-    if choice != 2:
-        print("Hello,", name[0])
-        name[4] = int(input("Please enter the number of goals for the HOME team: "))
-        name[5] = int(input("Please enter the number of goals for the AWAY team: "))
-        print("Your bet is:", name[4], "-", name[5])
+    if choice == 1:
+        print("Hello,", name[0] + "!\nBet is open until " + str(endTimeBet))
+        now = datetime.datetime.now().strftime("%H:%M:%S")
+        if now < endTimeBet:
+            name[4] = int(input("Please enter the number of goals for " + HomeTeam + ": "))
+            name[5] = int(input("Please enter the number of goals for " + AwayTeam + ": "))
+            print("Your bet is:", HomeTeam, name[4], "-", name[5], AwayTeam)
+        else:
+            print("Sorry," + name[0], "time of bet has passed.")
