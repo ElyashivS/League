@@ -12,7 +12,7 @@ Yuval = ["Yuval", E3, W3, PTS3, homeBet3, awayBet3]
 Yehiam = ["Yehiam", E4, W4, PTS4, homeBet4, awayBet4]
 Matanel = ["Matanel", E5, W5, PTS5, homeBet5, awayBet5]
 Shmuel = ["Shmuel", E6, W6, PTS6, homeBet6, awayBet6]
-endTimeBet = datetime.time.min.strftime("%H:%M:%S")
+endTimeBet = datetime.time.max.strftime("%H:%M:%S")
 
 players = [Elyashiv, David, Yuval, Yehiam, Matanel, Shmuel]
 running = True
@@ -20,9 +20,9 @@ running = True
 while running:
     choice = 1
     print("""Welcome to the Tribuna league!
-+--------+----------------+--------------------+----------+
-|   Name |   Exact result |   Winning identity | PTS      |
-+========+================+====================+==========+""")
++---------+----------------+--------------------+----------+
+|   Name  |   Exact result |   Winning identity |   PTS    |
++=========+================+====================+==========+""")
 
     players.sort(key=lambda x: x[3])
     players.reverse()
@@ -34,12 +34,18 @@ while running:
     fifth = players[4]
     sixth = players[5]
 
-    print("|", first[0], "|\t", first[1], "\t|\t", first[2], "\t|\t", first[3])
-    print("|", second[0], "|\t", second[1], "\t|\t", second[2], "\t|\t", second[3])
-    print("|", third[0], "|\t", third[1], "\t|\t", third[2], "\t|\t", third[3])
-    print("|", forth[0], "|\t", forth[1], "\t|\t", forth[2], "\t|\t", forth[3])
-    print("|", fifth[0], "|\t", fifth[1], "\t|\t", fifth[2], "\t|\t", fifth[3])
-    print("|", sixth[0], "|\t", sixth[1], "\t|\t", sixth[2], "\t|\t", sixth[3])
+    print("|", first[0], " |      ", first[1], "       |         ", first[2], "        |    ", first[3], "   |")
+    print("+---------+----------------+--------------------+----------+")
+    print("|", second[0], "|      ", second[1], "       |         ", second[2], "        |    ", second[3], "   |")
+    print("+---------+----------------+--------------------+----------+")
+    print("|", third[0], " |      ", third[1], "       |         ", third[2], "        |    ", third[3], "   |")
+    print("+---------+----------------+--------------------+----------+")
+    print("|", forth[0], "  |      ", forth[1], "       |         ", forth[2], "        |    ", forth[3], "   |")
+    print("+---------+----------------+--------------------+----------+")
+    print("|", fifth[0], "  |      ", fifth[1], "       |         ", fifth[2], "        |    ", fifth[3], "   |")
+    print("+---------+----------------+--------------------+----------+")
+    print("|", sixth[0] + "|      ", sixth[1], "       |         ", sixth[2], "        |    ", sixth[3], "   |")
+    print("+=========+================+====================+==========+")
 
     print("""Please enter your number:
     1. Elyashiv
@@ -71,6 +77,7 @@ while running:
                     player[2] += 1
                     player[3] += 1
                     print(player[0], "got identity, and gain 1 points")
+
         elif choice == 3:
             HomeTeam = input("\tEnter the name of the HOME team: ")
             AwayTeam = input("\tEnter the name of the AWAY team: ")
