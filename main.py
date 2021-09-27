@@ -58,12 +58,15 @@ while running:
                 if i.get_home_bet() == RHome and i.get_away_bet() == RAway:
                     i.set_exact_result(i.get_exact_result() + 1)
                     i.set_points(i.get_points() + 3)
-                    print(i.get_name(), "got exact result, and gain 3 points")
+                    print(i.get_name(), "bet", i.get_home_bet(), "-", i.get_away_bet(), "and got exact result!"
+                                                                                        " good job. 3 points :)")
                 elif (i.get_home_bet() > i.get_away_bet() and RHome > RAway) or (i.get_home_bet() < i.get_away_bet() and RHome < RAway) or \
                         (i.get_home_bet() == i.get_away_bet() and RHome == RAway):
                     i.set_winning_identity(i.get_winning_identity() + 1)
                     i.set_points(i.get_points() + 1)
-                    print(i.get_name(), "got identity, and gain 1 points")
+                    print(i.get_name(), "bet", i.get_home_bet(), "-", i.get_away_bet(), "and got identity. 1 point.")
+                else:
+                    print(i.get_name(), "bet", i.get_home_bet(), "-", i.get_away_bet(), "and got nothing :D")
 
         elif choice == 3:
             HomeTeam = input("\tEnter the name of the HOME team: ")

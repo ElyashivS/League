@@ -8,7 +8,6 @@ class Player:
         self.awayBet = awayBet
 
     # Getters:
-
     def get_name(self):
         return self.name
 
@@ -28,7 +27,6 @@ class Player:
         return self.awayBet
 
     # Setters:
-
     def set_exact_result(self, value):
         self.exactResult = value
 
@@ -43,6 +41,7 @@ class Player:
 
     def set_away_bet(self, value):
         self.awayBet = value
+
 
     def get_stats(self):
         if len(self.get_name()) == 5:
