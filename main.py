@@ -31,18 +31,8 @@ while running:
     fifth = players[4]
     sixth = players[5]
 
-    print("|", first.get_name(), " |", first.get_exact_result(), "|", first.get_winning_identity(), "|", first.get_points(), "|")
-    print("+---------+----------------+--------------------+----------+")
-    print("|", second.get_name(), "|", second.get_exact_result(), "|", second.get_winning_identity(), "|", second.get_points(), "|")
-    print("+---------+----------------+--------------------+----------+")
-    print("|", third.get_name(), "|", third.get_exact_result(), "|", third.get_winning_identity(), "|", third.get_points(), "|")
-    print("+---------+----------------+--------------------+----------+")
-    print("|", forth.get_name(), "|", forth.get_exact_result(), "|", forth.get_winning_identity(), "|", forth.get_points(), "|")
-    print("+---------+----------------+--------------------+----------+")
-    print("|", fifth.get_name(), "|", fifth.get_exact_result(), "|", fifth.get_winning_identity(), "|", fifth.get_points(), "|")
-    print("+---------+----------------+--------------------+----------+")
-    print("|", sixth.get_name() + "|", sixth.get_exact_result(), "|", sixth.get_winning_identity(), "|", sixth.get_points(), "|")
-    print("+=========+================+====================+==========+")
+    for i in players:
+        print(i.get_stats())
 
     print("""Please enter your number:
     1. Elyashiv
