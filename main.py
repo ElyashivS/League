@@ -24,12 +24,14 @@ while running:
 
     players.sort(key=lambda x: x.get_points(), reverse=True)
 
-    first = players[0]
-    second = players[1]
-    third = players[2]
-    forth = players[3]
-    fifth = players[4]
-    sixth = players[5]
+    # DO I NEED IT?
+
+    # first = players[0]
+    # second = players[1]
+    # third = players[2]
+    # forth = players[3]
+    # fifth = players[4]
+    # sixth = players[5]
 
     for i in players:
         print(i.get_stats())
@@ -60,7 +62,8 @@ while running:
                     i.set_points(i.get_points() + 3)
                     print(i.get_name(), "bet", i.get_home_bet(), "-", i.get_away_bet(), "and got exact result!"
                                                                                         " good job. 3 points :)")
-                elif (i.get_home_bet() > i.get_away_bet() and RHome > RAway) or (i.get_home_bet() < i.get_away_bet() and RHome < RAway) or \
+                elif (i.get_home_bet() > i.get_away_bet() and RHome > RAway) or \
+                        (i.get_home_bet() < i.get_away_bet() and RHome < RAway) or \
                         (i.get_home_bet() == i.get_away_bet() and RHome == RAway):
                     i.set_winning_identity(i.get_winning_identity() + 1)
                     i.set_points(i.get_points() + 1)
@@ -85,11 +88,11 @@ while running:
     elif name == 6:
         name = Shmuel
     if choice == 1:
-        print("Hello,", name.get_name() + "!\nBet is open until " + str(endTimeBet))
+        print("Hello," + name.get_name() + "!\nBet is open until " + str(endTimeBet))
         now = datetime.datetime.now().strftime("%H:%M:%S")
         if now < endTimeBet:
             name.set_home_bet(int(input("Please enter the number of goals for " + HomeTeam + ": ")))
             name.set_away_bet(int(input("Please enter the number of goals for " + AwayTeam + ": ")))
             print("Your bet is:", HomeTeam, name.get_home_bet(), "-", name.get_away_bet(), AwayTeam)
         else:
-            print("Sorry," + name.get_name(), "time of bet has passed.")
+            print("Sorry, " + name.get_name() + "time of bet has passed.")

@@ -42,21 +42,20 @@ class Player:
     def set_away_bet(self, value):
         self.awayBet = value
 
-
     def get_stats(self):
         if len(self.get_name()) == 5:
             return "|  " + self.get_name() + "  |        " + str(self.get_exact_result()) + "       |          " + \
-                    str(self.get_winning_identity()) + "         |     " + str(self.get_points()) + \
-                    "    |\n+---------+----------------+--------------------+----------+"
-        if len(self.get_name()) == 6:
+                   str(self.get_winning_identity()) + "         |     " + str(self.get_points()) + \
+                   "    |\n+---------+----------------+--------------------+----------+"
+        elif len(self.get_name()) == 6:
             return "| " + self.get_name() + "  |        " + str(self.get_exact_result()) + "       |          " + \
-                    str(self.get_winning_identity()) + "         |     " + str(self.get_points()) + \
-                    "    |\n+---------+----------------+--------------------+----------+"
-        if len(self.get_name()) == 7:
+                   str(self.get_winning_identity()) + "         |     " + str(self.get_points()) + \
+                   "    |\n+---------+----------------+--------------------+----------+"
+        elif len(self.get_name()) == 7:
             return "| " + self.get_name() + " |        " + str(self.get_exact_result()) + "       |          " + \
-                    str(self.get_winning_identity()) + "         |     " + str(self.get_points()) + \
-                    "    |\n+---------+----------------+--------------------+----------+"
-        if len(self.get_name()) == 8:
+                   str(self.get_winning_identity()) + "         |     " + str(self.get_points()) + \
+                   "    |\n+---------+----------------+--------------------+----------+"
+        else:
             return "|" + self.get_name() + " |        " + str(self.get_exact_result()) + "       |          " + \
                    str(self.get_winning_identity()) + "         |     " + str(self.get_points()) + \
                    "    |\n+---------+----------------+--------------------+----------+"
