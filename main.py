@@ -77,6 +77,7 @@ while running:
         elif choice == 4:
             hour, minutes = int(input("Enter a hour: ")), int(input("Enter a minutes: "))
             endTimeBet = datetime.time(hour, minutes).strftime("%H:%M:%S")
+            print("The end time of the bet has updated to", endTimeBet)
     elif name == 2:
         name = David
     elif name == 3:
@@ -95,4 +96,4 @@ while running:
             name.set_away_bet(int(input("Please enter the number of goals for " + AwayTeam + ": ")))
             print("Your bet is:", HomeTeam, name.get_home_bet(), "-", name.get_away_bet(), AwayTeam)
         else:
-            print("Sorry, " + name.get_name() + "time of bet has passed.")
+            print("Sorry, " + name.get_name() + " time of bet has passed.")
