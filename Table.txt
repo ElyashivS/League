@@ -1,5 +1,6 @@
+Welcome to the Tribuna league!
 +---------+----------------+--------------------+----------+
-|   Name  |   Exact result |   Winning identity |   PTS    |
+|  Name   |  Exact result  |  Winning identity  |   PTS    |
 +=========+================+====================+==========+
 |Elyashiv |        0       |          0         |     0    |
 +---------+----------------+--------------------+----------+
