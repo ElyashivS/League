@@ -19,7 +19,7 @@ while running:
     choice = 1
     print("""Welcome to the Tribuna league!
 +---------+----------------+--------------------+----------+
-|   Name  |   Exact result |   Winning identity |   PTS    |
+|  Name   |  Exact result  |  Winning identity  |   PTS    |
 +=========+================+====================+==========+""")
 
     players.sort(key=lambda x: x.get_points(), reverse=True)
