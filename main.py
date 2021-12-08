@@ -4,6 +4,9 @@ import datetime
 HomeTeam = "Home Team"
 AwayTeam = "Away Team"
 endTimeBet = datetime.time.max.strftime("%H:%M:%S")
+writeToTable = ""
+welcomeLine = ""
+bets = ""
 
 Elyashiv = Player("Elyashiv", 0, 0, 0, 0, 0)
 David = Player("David", 0, 0, 0, 0, 0)
@@ -17,24 +20,17 @@ running = True
 
 while running:
     choice = 1
-    print("""Welcome to the Tribuna league!
+    welcomeLine = """Welcome to the Tribuna league!
 +---------+----------------+--------------------+----------+
 |  Name   |  Exact result  |  Winning identity  |   PTS    |
-+=========+================+====================+==========+""")
++=========+================+====================+==========+"""
 
     players.sort(key=lambda x: x.get_points(), reverse=True)
 
-    # DO I NEED IT?
-
-    # first = players[0]
-    # second = players[1]
-    # third = players[2]
-    # forth = players[3]
-    # fifth = players[4]
-    # sixth = players[5]
-
     for i in players:
-        print(i.get_stats())
+        writeToTable += i.get_stats() + "\n"
+    print(welcomeLine)
+    print(writeToTable)
 
     print("""Please enter your number:
     1. Elyashiv
@@ -95,5 +91,23 @@ while running:
             name.set_home_bet(int(input("Please enter the number of goals for " + HomeTeam + ": ")))
             name.set_away_bet(int(input("Please enter the number of goals for " + AwayTeam + ": ")))
             print("Your bet is:", HomeTeam, name.get_home_bet(), "-", name.get_away_bet(), AwayTeam)
+
         else:
             print("Sorry, " + name.get_name() + " time of bet has passed.")
+        running = False
+
+writeToTable = welcomeLine + "\n"
+for i in players:
+    writeToTable += i.get_stats() + "\n"
+
+# f = open("Bets.txt", "w")
+# f.write()
+# f.close()
+
+f = open("Table.txt", "w")
+f.write(writeToTable)
+f.close()
+
+# # open and read the file after the writing:
+# f = open("Table.txt", "r")
+# print(f.read())
