@@ -1,4 +1,6 @@
 class Player:
+
+    # Constructor
     def __init__(self, name, exactResult, winningIdentity, points, homeBet, awayBet):
         self.name = name
         self.exactResult = exactResult
