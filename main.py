@@ -90,7 +90,10 @@ while running:
         if now < endTimeBet:
             name.set_home_bet(int(input("Please enter the number of goals for " + HomeTeam + ": ")))
             name.set_away_bet(int(input("Please enter the number of goals for " + AwayTeam + ": ")))
-            print("Your bet is:", HomeTeam, name.get_home_bet(), "-", name.get_away_bet(), AwayTeam)
+            # print("Your bet is:", HomeTeam, name.get_home_bet(), "-", name.get_away_bet(), AwayTeam)
+            bets += "\n" + name.get_name() + " bet is: " + str(HomeTeam) + " " + str(name.get_home_bet()) \
+                + " - " + str(name.get_away_bet()) + " " + str(AwayTeam)
+            print(bets)
 
         else:
             print("Sorry, " + name.get_name() + " time of bet has passed.")
@@ -100,9 +103,9 @@ writeToTable = welcomeLine + "\n"
 for i in players:
     writeToTable += i.get_stats() + "\n"
 
-# f = open("Bets.txt", "w")
-# f.write()
-# f.close()
+f = open("Bets.txt", "a")
+f.write(bets)
+f.close()
 
 f = open("Table.txt", "w")
 f.write(writeToTable)
