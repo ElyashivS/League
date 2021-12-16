@@ -1,3 +1,6 @@
+import json
+
+
 class Player:
 
     # Constructor
@@ -61,3 +64,17 @@ class Player:
             return "|" + self.get_name() + " |        " + str(self.get_exact_result()) + "       |          " + \
                    str(self.get_winning_identity()) + "         |     " + str(self.get_points()) + \
                    "    |\n+---------+----------------+--------------------+----------+"
+
+    # def toJSON(self):
+    #     return json.dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)
+
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__, indent=4)
+
+    def dump(self):
+        return {'name': self.name,
+                'exactResult': self.exactResult,
+                'winningIdentity': self.winningIdentity,
+                'points': self.points,
+                'homeBet': self.homeBet,
+                'awayBet': self.awayBet}
