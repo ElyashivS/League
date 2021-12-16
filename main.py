@@ -1,5 +1,6 @@
 from Player import Player
 import datetime
+import json
 
 HomeTeam = "Home Team"
 AwayTeam = "Away Team"
@@ -92,25 +93,28 @@ while running:
             name.set_away_bet(int(input("Please enter the number of goals for " + AwayTeam + ": ")))
             # print("Your bet is:", HomeTeam, name.get_home_bet(), "-", name.get_away_bet(), AwayTeam)
             bets += "\n" + name.get_name() + " bet is: " + str(HomeTeam) + " " + str(name.get_home_bet()) \
-                + " - " + str(name.get_away_bet()) + " " + str(AwayTeam)
+                    + " - " + str(name.get_away_bet()) + " " + str(AwayTeam)
             print(bets)
 
         else:
             print("Sorry, " + name.get_name() + " time of bet has passed.")
         running = False
 
-writeToTable = welcomeLine + "\n"
-for i in players:
-    writeToTable += i.get_stats() + "\n"
+j = json.dumps([o.dump() for o in players])
 
-f = open("Bets.txt", "a")
-f.write(bets)
+f = open("data.json", "w")
+f.write(j)
 f.close()
 
-f = open("Table.txt", "w")
-f.write(writeToTable)
-f.close()
+abc = json.load(open('data.json'))
+print(abc[2]['points'])
 
-# # open and read the file after the writing:
-# f = open("Table.txt", "r")
-# print(f.read())
+# abc = json.load(open('data.json'))
+# print(abc['awayBet'])
+#
+# y = Elyashiv.toJSON()
+# j = json.dumps(y)
+#
+# f = open("data.json", "w")
+# f.write(y)
+# f.close()
