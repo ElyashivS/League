@@ -4,13 +4,14 @@ import json
 class Player:
 
     # Constructor
-    def __init__(self, name, exactResult, winningIdentity, points, homeBet, awayBet):
+    def __init__(self, name, exactResult, winningIdentity, points, homeBet, awayBet, endTimeBet):
         self.name = name
         self.exactResult = exactResult
         self.winningIdentity = winningIdentity
         self.points = points
         self.homeBet = homeBet
         self.awayBet = awayBet
+        self.endTimeBet = endTimeBet
 
     # Getters:
     def get_name(self):
@@ -77,4 +78,5 @@ class Player:
                 'winningIdentity': self.winningIdentity,
                 'points': self.points,
                 'homeBet': self.homeBet,
-                'awayBet': self.awayBet}
+                'awayBet': self.awayBet,
+                'endTimeBet': self.endTimeBet}
