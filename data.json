@@ -4,8 +4,9 @@
     "exactResult": 0,
     "winningIdentity": 0,
     "points": 0,
-    "homeBet": 3,
-    "awayBet": 2
+    "homeBet": 7,
+    "awayBet": 6,
+    "endTimeBet": "23:59:59"
   },
   {
     "name": "David",
@@ -13,7 +14,8 @@
     "winningIdentity": 0,
     "points": 0,
     "homeBet": 0,
-    "awayBet": 0
+    "awayBet": 0,
+    "endTimeBet": null
   },
   {
     "name": "Yuval",
@@ -21,7 +23,8 @@
     "winningIdentity": 0,
     "points": 0,
     "homeBet": 0,
-    "awayBet": 0
+    "awayBet": 0,
+    "endTimeBet": null
   },
   {
     "name": "Yehiam",
@@ -29,7 +32,8 @@
     "winningIdentity": 0,
     "points": 0,
     "homeBet": 0,
-    "awayBet": 0
+    "awayBet": 0,
+    "endTimeBet": null
   },
   {
     "name": "Matanel",
@@ -37,7 +41,8 @@
     "winningIdentity": 0,
     "points": 0,
     "homeBet": 0,
-    "awayBet": 0
+    "awayBet": 0,
+    "endTimeBet": null
   },
   {
     "name": "Shmuel",
@@ -45,6 +50,7 @@
     "winningIdentity": 0,
     "points": 0,
     "homeBet": 0,
-    "awayBet": 0
+    "awayBet": 0,
+    "endTimeBet": null
   }
 ]
