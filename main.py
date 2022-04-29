@@ -16,6 +16,7 @@ Yehiam = Player("Yehiam", 0, 0, 0, 0, 0, None)
 Matanel = Player("Matanel", 0, 0, 0, 0, 0, None)
 Shmuel = Player("Shmuel", 0, 0, 0, 0, 0, None)
 
+Elyashiv.endTimeBet = abc[0]['endTimeBet']
 players = [Elyashiv, David, Yuval, Yehiam, Matanel, Shmuel]
 # running = True
 
@@ -73,9 +74,9 @@ if name == 1:
         AwayTeam = input("\tEnter the name of the AWAY team: ")
     elif choice == 4:
         hour, minutes = int(input("Enter a hour: ")), int(input("Enter a minutes: "))
-        abc[0]['endTimeBet'] = datetime.time(hour, minutes).strftime("%H:%M:%S")
+        Elyashiv.endTimeBet = datetime.time(hour, minutes).strftime("%H:%M:%S")
 
-        print("The end time of the bet has updated to", abc[0]['endTimeBet'])
+        print("The end time of the bet has updated to", Elyashiv.endTimeBet)
 
 elif name == 2:
     name = David
@@ -88,9 +89,9 @@ elif name == 5:
 elif name == 6:
     name = Shmuel
 if choice == 1:
-    print("Hello," + name.get_name() + "!\nBet is open until " + str(abc[0]['endTimeBet']))
+    print("Hello," + name.get_name() + "!\nBet is open until " + str(Elyashiv.endTimeBet))
 now = datetime.datetime.now().strftime("%H:%M:%S")
-if now < abc[0]['endTimeBet']:
+if now < Elyashiv.endTimeBet:
     name.set_home_bet(int(input("Please enter the number of goals for " + HomeTeam + ": ")))
     name.set_away_bet(int(input("Please enter the number of goals for " + AwayTeam + ": ")))
     # print("Your bet is:", HomeTeam, name.get_home_bet(), "-", name.get_away_bet(), AwayTeam)
