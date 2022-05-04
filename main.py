@@ -7,17 +7,23 @@ AwayTeam = "Away Team"
 writeToTable = ""
 bets = ""
 abc = json.load(open('data.json'))
-# print(abc[2]['points'])
+
 
 Elyashiv = Player("Elyashiv", 0, 0, 0, 0, 0, datetime.time.max.strftime("%H:%M:%S"))
+# Elyashiv.set_home_bet(json.loads(str(abc[0]['homeBet'])))
 David = Player("David", 0, 0, 0, 0, 0, None)
 Yuval = Player("Yuval", 0, 0, 0, 0, 0, None)
 Yehiam = Player("Yehiam", 0, 0, 0, 0, 0, None)
 Matanel = Player("Matanel", 0, 0, 0, 0, 0, None)
 Shmuel = Player("Shmuel", 0, 0, 0, 0, 0, None)
 
-Elyashiv.endTimeBet = abc[0]['endTimeBet']
+# Elyashiv.endTimeBet = abc[0]['endTimeBet']
 players = [Elyashiv, David, Yuval, Yehiam, Matanel, Shmuel]
+for i in abc:
+    players = abc
+    print(type(i)) # dict
+    print(type(abc)) # list
+    i.items()
 # running = True
 
 # while running:
@@ -100,7 +106,7 @@ if now < Elyashiv.endTimeBet:
     print(bets)
 
 else:
-    print("Sorry, " + name.get_name() + " time of bet has passed.")
+    print("Sorry " + name.get_name() + ", time of bet has passed.")
 running = False
 
 j = json.dumps([o.dump() for o in players])
@@ -109,5 +115,5 @@ f = open("data.json", "w")
 f.write(j)
 f.close()
 
-abc = json.load(open('data.json'))
-print(abc[2]['points'], "Json WORKS")
+# abc = json.load(open('data.json'))
+# print(abc[2]['points'], "Json WORKS")
