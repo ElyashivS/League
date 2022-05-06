@@ -107,16 +107,16 @@ elif name == 6:
     name = Shmuel
 if choice == 1:
     print("Hello," + name.get_name() + "!\nBet is open until " + str(Elyashiv.endTimeBet))
-now = datetime.datetime.now().strftime("%H:%M:%S")
-if now < Elyashiv.endTimeBet:
-    name.set_home_bet(int(input("Please enter the number of goals for " + HomeTeam + ": ")))
-    name.set_away_bet(int(input("Please enter the number of goals for " + AwayTeam + ": ")))
-    bets += "\n" + name.get_name() + " bet is: " + str(HomeTeam) + " " + str(name.get_home_bet()) \
-            + " - " + str(name.get_away_bet()) + " " + str(AwayTeam)
-    print(bets)
+    now = datetime.datetime.now().strftime("%H:%M:%S")
+    if now < Elyashiv.endTimeBet:
+        name.set_home_bet(int(input("Please enter the number of goals for " + HomeTeam + ": ")))
+        name.set_away_bet(int(input("Please enter the number of goals for " + AwayTeam + ": ")))
+        bets += "\n" + name.get_name() + " bet is: " + str(HomeTeam) + " " + str(name.get_home_bet()) \
+                + " - " + str(name.get_away_bet()) + " " + str(AwayTeam)
+        print(bets)
 
-else:
-    print("Sorry " + name.get_name() + ", time of bet has passed.")
+    else:
+        print("Sorry " + name.get_name() + ", time of bet has passed.")
 
 j = json.dumps([o.dump() for o in a])  # Write data in JSON format
 
